@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>BenchmarkExecutor</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.492 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i5-6300U CPU 2.40GHz (Skylake), 1 CPU, 4 logical and 2 physical cores
+Frequency=2437500 Hz, Resolution=410.2564 ns, Timer=TSC
+.NET Core SDK=2.1.300
+  [Host]     : .NET Core 2.1.0 (CoreCLR 4.6.26515.07, CoreFX 4.6.26515.06), 64bit RyuJIT  [AttachedDebugger]
+  DefaultJob : .NET Core 2.1.0 (CoreCLR 4.6.26515.07, CoreFX 4.6.26515.06), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>         Method</th><th>       Mean</th><th>       Error</th><th>      StdDev</th><th>        Min</th><th>        Max</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>DeSerializeNewtonSoft</td><td>915,666,878.05 ns</td><td>17,947,057.7287 ns</td><td>28,981,152.8905 ns</td><td>857,685,319.23 ns</td><td>982,230,703.85 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>DeSerializeNetJSON</td><td>888,692,608.55 ns</td><td>17,741,143.6273 ns</td><td>29,641,465.5298 ns</td><td>854,334,978.21 ns</td><td>950,767,183.33 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>SerializeNewtonSoft</td><td>70.01 ns</td><td>1.1071 ns</td><td>0.9814 ns</td><td>68.67 ns</td><td>72.38 ns</td><td>0.0254</td><td>40 B</td>
+</tr><tr><td>SerializeNetJSON</td><td>68.29 ns</td><td>0.8290 ns</td><td>0.7349 ns</td><td>66.54 ns</td><td>69.38 ns</td><td>0.0254</td><td>40 B</td>
+</tr></tbody></table>
+</body>
+</html>

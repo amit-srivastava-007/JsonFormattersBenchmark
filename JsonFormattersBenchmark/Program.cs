@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BenchmarkDotNet.Running;
+using System;
 
 namespace JsonFormattersBenchmark
 {
@@ -6,7 +7,12 @@ namespace JsonFormattersBenchmark
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Testing Deserialization");
+
+            var summary = BenchmarkRunner.Run(typeof(BenchmarkExecutorLargeDataSet));
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
         }
     }
 }
